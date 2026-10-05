@@ -27,7 +27,9 @@ public class RFC {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        System.out.println("Hola. Bienvenido al creador de RFC! Por favor, dame tu nombre completo, además de información adicional, para poder generar tu RFC.");
+        // Doy el mensaje de bienvenida al usuario y le pido su nombre, además de su fecha de nacimiento.
+
+        System.out.println("Hola. Bienvenido al creador de RFC! Por favor, dame tu nombre completo y tu fecha de nacimiento, para poder generar tu RFC.");
         String nombreCompleto = in.nextLine().trim();
 
         System.out.println("¡Gracias! Ahora, por favor, ingresa tu fecha de nacimiento en el formato dd/mm/aa.");
@@ -44,16 +46,17 @@ public class RFC {
 
         // Aquí estoy separando la fecha de nacimiento en día, mes y año para poder construir la parte numérica del RFC.
 
-
-            String ano = fechaNacimiento.substring(0, 2);
+            String dia = fechaNacimiento.substring(0, 2);
 
             String mes = fechaNacimiento.substring(3, 5);
 
-            String dia = fechaNacimiento.substring(6, 8);
+            String ano = fechaNacimiento.substring(fechaNacimiento.length() - 2);
+
+            String rfc = (apellidoPaterno.substring(0, 2) + apellidoMaterno.substring(0, 1) + nombre.substring(0, 1) + ano + mes + dia).toUpperCase();
+
 
         // Aquí declaro el RFC final y lo muestro al usuario, además de dar un mensaje de cierre del programa.  
 
-            String rfc = apellidoPaterno.substring(0, 2) + apellidoMaterno.substring(0, 1) + nombre.substring(0, 1) + ano + mes + dia;
 
             System.out.println("Perfecto, estimado. Su RFC ha sido generado correctamente. Por favor, compruébelo a continuación.");
         
@@ -61,7 +64,7 @@ public class RFC {
 
         // Aquí convierto el RFC final a mayúculas para dar el RFC en el formato correcto y lo muestro al usuario.
 
-             System.out.println(rfc.toUpperCase() + "es la versión final de tu RFC, espero tenga un buen día.");
+             System.out.println(rfc.toUpperCase() + " es la versión final de tu RFC, espero tenga un buen día.");
 
              
         in.close();
