@@ -84,4 +84,3 @@ java -cp out icc.RFC
 - Todo el código está documentado con formato Javadoc
 - El código respeta los estándares de indentación
 - Se utilizan métodos de la clase String sin estructuras condicionales (`if`)
-- Los archivos compilados (`.class`) están en `.gitignore`
