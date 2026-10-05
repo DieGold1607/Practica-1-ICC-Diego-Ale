@@ -23,7 +23,7 @@ public class Psicologo {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String nombreCompletodelPaciente;
-        String nombre, edad, ocupacion, sexo, motivoConsulta, razón, fechaConsulta, horaConsulta;
+        String nombre, edad, ocupacion, sexo, motivoConsulta, razon, fechaConsulta, horaConsulta;
 
         // Bienvenida general al paciente.
         System.out.println("Bienvenido, estimado, eres muy importante para nosotros, deseamos brindarte el mejor servicio posible, por favor, ¿me permitirías hacerte unas preguntas?");
@@ -54,7 +54,7 @@ public class Psicologo {
         System.out.println("Mmm... ya veo...");
         System.out.println("¿Y por que motivo te sientes así..." + motivoConsulta + "?");
 
-        razón = in.nextLine().trim();
+        razon = in.nextLine().trim();
 
         System.out.println("Entiendo perfectamente por qué te sientes así... " + razón + "...No te preocupes, estimado, lo hablaremos en la próxima consulta.");
 
