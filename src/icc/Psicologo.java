@@ -3,24 +3,62 @@ package icc;
 import java.util.Scanner;
 
 /**
- * Clase principal para registrar la información básica de un paciente
- * en una consulta psicológica.
- * El programa solicita datos personales del paciente, motivo de consulta,
- * fecha y hora de la cita, y finaliza con un resumen del expediente.
+ * Clase principal para simular una sesión con un psicólogo.
+ * El programa pide el nombre del paciente, el problema que lo aqueja
+ * y el motivo por el que se siente así, y cierra con un mensaje
+ * para continuar en la siguiente sesión.
+ *
+ * Al final del archivo se conserva, comentada, una versión extendida
+ * del programa (expediente con edad, ocupación, sexo, fecha y hora de la cita).
  *
  * @author Peña Suárez Diego Alejandro
- * @version 1.1
+ * @version 1.2
  */
 public class Psicologo {
 
     /**
      * Método principal que ejecuta la interacción con el usuario.
-     * Se solicita la información del paciente, se deja el registro
-     * de la cita y se muestra un resumen final del expediente.
+     * Se solicita el nombre del paciente y la descripción de su problema,
+     * se responde con la pregunta del psicólogo y se cierra la sesión.
      *
      * @param args argumentos enviados desde la línea de comandos
      */
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String nombre, motivoConsulta, razon;
+
+        // Bienvenida general al paciente y solicitud de su nombre.
+        System.out.println("Bienvenido, estimado, eres muy importante para nosotros. ¿Cuál es su nombre?");
+        nombre = in.nextLine().trim();
+
+        // Se saluda al paciente y se le pregunta cuál es su problema.
+        System.out.println("Buenas tardes " + nombre + ".");
+        System.out.println("Dígame, ¿cuál es su problema en la vida?");
+        motivoConsulta = in.nextLine().trim();
+
+        // Respuesta del psicólogo, citando entre comillas lo que dijo el paciente.
+        System.out.println("MMMM... ya veo");
+        System.out.println("Y dígame...");
+        System.out.println("¿Por qué dice \"" + motivoConsulta + "\"?");
+        razon = in.nextLine().trim();
+
+        // Cierre de la sesión.
+        System.out.println("¡Muy interesante!! Hablaremos de ello con más detalle en la siguiente sesión.");
+
+        in.close();
+    }
+
+    /*
+     * -----------------------------------------------------------------
+     * VERSIÓN EXTENDIDA (idea original, desactivada)
+     *
+     * Esta es mi primera versión del programa: arma un expediente con
+     * edad, ocupación, sexo y la fecha y hora de la cita. No se ejecuta
+     * porque la práctica pide un diálogo más corto. Para volver a usarla,
+     * se reemplaza el cuerpo de main por el código de abajo.
+     * (En esta copia cambié el nombre de la variable "razón" a "razon", puesto que las variables deben estar en minúscula y no contener ningún acento.)
+     * -----------------------------------------------------------------
+
         Scanner in = new Scanner(System.in);
         String nombreCompletodelPaciente;
         String nombre, edad, ocupacion, sexo, motivoConsulta, razon, fechaConsulta, horaConsulta;
@@ -56,7 +94,7 @@ public class Psicologo {
 
         razon = in.nextLine().trim();
 
-        System.out.println("Entiendo perfectamente por qué te sientes así... " + razón + "...No te preocupes, estimado, lo hablaremos en la próxima consulta.");
+        System.out.println("Entiendo perfectamente por qué te sientes así... " + razon + "...No te preocupes, estimado, lo hablaremos en la próxima consulta.");
 
         // Se solicita la fecha y la hora de la cita, separadas por un espacio.
         System.out.println("¡Gracias! Ahora, por favor, ingresa la fecha y hora de tu consulta para poder agendarla correctamente.");
@@ -68,9 +106,9 @@ public class Psicologo {
 
         // Se finaliza con el resumen del expediente del paciente.
         System.out.println("¡Me siento honrado de poder ser tu psicólogo y poder ayudarte a superar las cosas complicadas que pueden surgir en tu día a día! Recuerda que eres valioso y mereces ser feliz, y que siempre estaré aquí para escucharte y ayudarte en lo que necesites.");
-        System.out.println("Gracias por tu tiempo. Tu expediente es el siguiente: \nNombre: " + nombre + "\nEdad: " + edad + "\nOcupación: " + ocupacion + "\nSexo: " + sexo + "\nMotivo de consulta y razón: " + motivoConsulta + " - " + razón+ "\nFecha de consulta: " + fechaConsulta + "\nHora de consulta: " + horaConsulta);
+        System.out.println("Gracias por tu tiempo. Tu expediente es el siguiente: \nNombre: " + nombre + "\nEdad: " + edad + "\nOcupación: " + ocupacion + "\nSexo: " + sexo + "\nMotivo de consulta y razón: " + motivoConsulta + " - " + razon + "\nFecha de consulta: " + fechaConsulta + "\nHora de consulta: " + horaConsulta);
         System.out.println("Tu expediente ha sido creado con éxito, y tu cita ha sido agendada para el día " + fechaConsulta + " a las " + horaConsulta + ". ¡Nos vemos pronto! :)");
 
         in.close();
-    }
+     */
 }
