@@ -1,0 +1,25 @@
+# Archivos compilados de Java
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+
+# Archivos generados por el IDE
+.DS_Store
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+*~
+
+# Carpetas de salida
+bin/
+out/
+target/
+build/
+
+# Archivos temporales
+*.tmp
+*.log
